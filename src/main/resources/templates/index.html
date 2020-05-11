@@ -23,12 +23,12 @@
             </tr>
 
             <tr th:each="blogPost, iterStat: ${allPosts}">
-                <td th:text="${allPosts.get(iterStat.index).getId()}"></td>
-                <td th:text="${allPosts.get(iterStat.index).getTitle()}"></td>
-                <td th:text="${allPosts.get(iterStat.index).getContent()}"></td>
+                <td th:text="${blogPost.id}"></td>
+                <td th:text="${blogPost.title}"></td>
+                <td th:text="${blogPost.content}"></td>
                 <td>
                     <form action="/removepost" method="post">
-                        <button name="id" th:value="${allPosts.get(iterStat.index).getId()}">usun</button>
+                        <button name="id" th:value="${blogPost.id}">usun</button>
                     </form>
                 </td>
             </tr>
